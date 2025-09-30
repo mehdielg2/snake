@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake avec Niveaux</title>
+    <style>
+        body { 
+            margin: 0; 
+            background: #222; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            color: white;
+            font-family: Arial;
+        }
+        canvas { 
+            border: 2px solid white; 
+            margin-bottom: 20px;
+        }
+        .score {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        /* Menu */
+        #menu {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid lime;
+            min-width: 300px;
+        }
+        
+        #menu h1 {
+            color: lime;
+            margin-bottom: 10px;
+        }
+        
+        .menu-btn {
+            background: lime;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 200px;
+        }
+        
+        .level-btn {
+            background: #444;
+            color: white;
+            border: 2px solid #666;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 180px;
+        }
+        
+        .level-btn:hover {
+            background: #555;
+        }
+        
+        .level-btn.active {
+            background: lime;
+            color: black;
+            border-color: lime;
+        }
+        
+        .menu-btn:hover {
+            background: #32cd32;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .instructions {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <h1>🐍 SNAKE MEHDI 🐍</h1>
+       
+        <button class="menu-btn" id="playBtn">JOUER</button>
+        
+        <div class="instructions">
+            Échap : Pause<br>
+            1,2,3 : Changer niveau
+        </div>
+    </div>
+
+    <div id="game" class="hidden">
+        <div class="score">Score: <span id="score">0</span></div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+    </div>
+
+    <script src="snake.js"></script>
+</body>
+</html>
+
